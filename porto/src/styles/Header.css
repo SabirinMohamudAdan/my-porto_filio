@@ -1,0 +1,25 @@
+@keyframes text-change {
+  0%, 33% {
+    opacity: 1;
+  }
+  34%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-text-change {
+  position: absolute;
+  animation: text-change 3s infinite; /* Waqtiga guud ee animation-ka */
+}
+
+.animate-text-change:nth-child(1) {
+  animation-delay: 0s; /* Web Developer wuxuu bilaabmayaa marka la bilowdo */
+}
+
+.animate-text-change:nth-child(2) {
+  animation-delay: 1s; /* Freelancer wuxuu bilaabmayaa 1 ilbiriqsi ka dib */
+}
+
+.animate-text-change:nth-child(3) {
+  animation-delay: 2s; /* Designer wuxuu bilaabmayaa 2 ilbiriqsi ka dib */
+}
