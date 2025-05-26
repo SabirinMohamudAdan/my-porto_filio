@@ -412,6 +412,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { FaReact, FaNode } from 'react-icons/fa';
+import { FaHeart, FaThumbsUp } from 'react-icons/fa';
 import profileImg from '../assets/spii.jpg'; // High-resolution professional headshot
 
 const Header = () => {
