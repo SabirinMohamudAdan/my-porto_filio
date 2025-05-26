@@ -309,3 +309,114 @@
 
 // export default Navbar;
 
+// ------------------------
+
+
+import React, { useState, useEffect } from 'react';
+import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('home');
+
+  // Handle scroll to update active link
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'service', 'project', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveLink(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = ['Home', 'About', 'Service', 'Project', 'Contact'];
+
+  return (
+    <nav className="bg-gray-900 p-4 fixed w-full top-0 z-50 shadow-lg backdrop-blur-sm bg-opacity-90">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-white text-2xl font-bold">
+          <a 
+            href="#home" 
+            className="hover:text-yellow-500 transition duration-300 flex items-center"
+            onClick={() => setActiveLink('home')}
+          >
+            <span className='text-yellow-500'>Sabirin</span>Mohamud.
+          </a>
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-6">
+          {navItems.map((item) => {
+            const lowerCaseItem = item.toLowerCase();
+            return (
+              <a 
+                href={`#${lowerCaseItem}`} 
+                key={item}
+                className={`relative px-3 py-2 text-white hover:text-yellow-500 transition duration-300 group ${
+                  activeLink === lowerCaseItem ? 'text-yellow-500' : ''
+                }`}
+                onClick={() => setActiveLink(lowerCaseItem)}
+              >
+                {item}
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-yellow-500 transition-all duration-300 ${
+                  activeLink === lowerCaseItem ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded-md p-1"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <RiCloseLine size={24} /> : <RiMenu3Line size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`md:hidden bg-gray-800 overflow-hidden transition-all duration-300 ease-in-out ${
+        isOpen ? 'max-h-96 mt-4 py-2 px-4 rounded-lg' : 'max-h-0'
+      }`}>
+        {navItems.map((item) => {
+          const lowerCaseItem = item.toLowerCase();
+          return (
+            <a 
+              href={`#${lowerCaseItem}`} 
+              key={item}
+              className={`block py-3 px-4 text-white hover:text-yellow-500 transition duration-300 rounded-md ${
+                activeLink === lowerCaseItem ? 'bg-gray-700 text-yellow-500' : 'hover:bg-gray-700'
+              }`}
+              onClick={() => {
+                setActiveLink(lowerCaseItem);
+                setIsOpen(false);
+              }}
+            >
+              {item}
+            </a>
+          );
+        })}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
