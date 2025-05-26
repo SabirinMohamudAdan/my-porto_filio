@@ -610,27 +610,22 @@ const Header = () => {
 
             {/* Floating tech badges with professional icons */}
 {/* Premium Portfolio Tech Badges */}
+{/* Like/Love Reaction Badges */}
 <div className="absolute -right-6 -bottom-6 z-20">
   <div className={`relative w-28 h-28 bg-gray-800/90 backdrop-blur-md rounded-2xl 
                   border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out
                   group ${isHovering ? 'translate-y-2 -rotate-3 scale-[1.02]' : ''}
-                  hover:shadow-[#61DAFB]/20 hover:border-[#61DAFB]/40`}>
+                  hover:shadow-pink-500/20 hover:border-pink-500/40`}>
     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-      {/* React Icon Container */}
+      {/* Heart Icon Container */}
       <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
-                     group-hover:bg-[#61DAFB]/10 group-hover:shadow-[#61DAFB]/10">
-        <FaReact className="text-5xl text-[#61DAFB] transition-transform duration-500 
-                           group-hover:scale-110 group-hover:rotate-12" />
+                     group-hover:bg-pink-500/10 group-hover:shadow-pink-500/10">
+        <FaHeart className="text-5xl text-pink-500 transition-transform duration-500 
+                           group-hover:scale-110 group-hover:animate-pulse" />
       </div>
-      {/* Success Badge */}
-      <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold 
-                     px-2 py-1 rounded-full flex items-center shadow-md">
-        <span>PRO</span>
-      </div>
-      {/* Label */}
-      <span className="text-xs font-medium text-gray-300 mt-1 opacity-0 
-                      group-hover:opacity-100 transition-opacity duration-300">
-        React Expert
+      {/* Reaction Count */}
+      <span className="text-xs font-medium text-gray-300 mt-1">
+        24K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Loves</span>
       </span>
     </div>
   </div>
@@ -640,23 +635,17 @@ const Header = () => {
   <div className={`relative w-24 h-24 bg-gray-800/90 backdrop-blur-md rounded-2xl 
                   border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out delay-100
                   group ${isHovering ? 'translate-y-2 rotate-3 scale-[1.02]' : ''}
-                  hover:shadow-[#68A063]/20 hover:border-[#68A063]/40`}>
+                  hover:shadow-blue-500/20 hover:border-blue-500/40`}>
     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-      {/* Node.js Icon Container */}
+      {/* Thumbs Up Icon Container */}
       <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
-                     group-hover:bg-[#68A063]/10 group-hover:shadow-[#68A063]/10">
-        <FaNode className="text-4xl text-[#68A063] transition-transform duration-500 
-                          group-hover:scale-110 group-hover:-rotate-12" />
+                     group-hover:bg-blue-500/10 group-hover:shadow-blue-500/10">
+        <FaThumbsUp className="text-4xl text-blue-400 transition-transform duration-500 
+                             group-hover:scale-110 group-hover:rotate-12" />
       </div>
-      {/* Success Badge */}
-      <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold 
-                     px-2 py-1 rounded-full flex items-center shadow-md">
-        <span>PRO</span>
-      </div>
-      {/* Label */}
-      <span className="text-xs font-medium text-gray-300 mt-1 opacity-0 
-                      group-hover:opacity-100 transition-opacity duration-300">
-        Node Specialist
+      {/* Reaction Count */}
+      <span className="text-xs font-medium text-gray-300 mt-1">
+        18K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Likes</span>
       </span>
     </div>
   </div>
