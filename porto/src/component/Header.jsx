@@ -838,14 +838,21 @@ const Header = () => {
           </div>
           
           {/* Description with highlighted skills */}
-          <p className="text-gray-300 mb-10 max-w-2xl text-lg md:text-xl leading-relaxed">
-            Crafting <span className="text-yellow-400 font-medium">high-performance</span> digital experiences with 
+          <p className="text-gray-300 mb-10 max-w-2xl text-lg md:text-xl
+           leading-relaxed">
+
+
+               Welcome to my portfolio! I am Sabirin, a skilled Full Stack Developer specializing
+           in the MERN stack (MongoDB, Express.js, React, Node.js), with additional expertise in PHP, MySQL, and Java.
+           Proficient in building responsive, scalable web applications, I am passionate about solving
+           complex problems and creating user-friendly websites
+            {/* Crafting <span className="text-yellow-400 font-medium">high-performance</span> digital experiences with 
             <span className="text-white font-semibold"> React</span>, 
             <span className="text-white font-semibold"> Node.js</span>, and 
             <span className="text-white font-semibold"> modern web architecture</span>. 
             Specializing in <span className="text-yellow-400">scalable solutions</span> that 
             <span className="text-white font-medium"> engage users</span> and 
-            <span className="text-white font-medium"> drive results</span>.
+            <span className="text-white font-medium"> drive results</span>. */}
           </p>
           
           {/* Action buttons with advanced interactions */}
