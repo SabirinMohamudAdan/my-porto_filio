@@ -644,7 +644,7 @@ const Header = () => {
                              group-hover:scale-110 group-hover:rotate-12" />
       </div>
       {/* Reaction Count */}
-      <span className="text-xs font-medium text-gray-300 mt-1">
+      <span className="text-xs font-medium  text-yellow-500 mt-1">
         18K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Likes</span>
       </span>
     </div>
