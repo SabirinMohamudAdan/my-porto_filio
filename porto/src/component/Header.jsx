@@ -497,7 +497,8 @@ const Header = () => {
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
               SABIRIN
             </span>{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400
+             to-yellow-600">
               MOHAMUD
             </span>
           </h1>
