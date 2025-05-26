@@ -52,12 +52,12 @@
 // export default App;
 
 import React from 'react';
-import Navbar from './components/Navbar';
-import Header from './components/Header';
-import About from './components/About';
-import Service from './components/Service';
-import Project from './components/Project';
-import Footer from './components/Footer';
+import Navbar from './component/Navbar';
+import Header from './component/Header';
+import About from './component/About';
+import Service from './component/Service';
+import Project from './component/Project';
+import Footer from './component/Footer';
 
 function App() {
   return (
