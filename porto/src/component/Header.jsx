@@ -192,3 +192,72 @@
 // };
 
 // export default Header;
+// --------------------------------------
+
+import React, { useState, useEffect } from 'react';
+import profileImg from '../assets/profile.jpg'; // Replace with your image
+
+const Header = () => {
+  const [currentRole, setCurrentRole] = useState(0);
+  const roles = ["Web Developer", "Full Stack Engineer", "UI/UX Designer"];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <header id="home" className="min-h-screen bg-gray-900 flex items-center pt-20">
+      <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
+        {/* Text Content */}
+        <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <div className="inline-block bg-yellow-500 text-white px-4 py-2 rounded-lg mb-4">
+            <span className="text-lg">Hello, I'm</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            Sabirin Mohamud
+          </h1>
+          
+          <h2 className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-6">
+            {roles[currentRole]}
+          </h2>
+          
+          <p className="text-gray-300 mb-8 max-w-lg">
+            I specialize in building exceptional digital experiences. With expertise in 
+            React, Node.js, and modern web technologies, I create fast, responsive, 
+            and user-friendly applications.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg transition duration-300">
+              Contact Me
+            </button>
+            <button className="flex items-center justify-center text-white hover:text-yellow-500 transition duration-300">
+              <div className="bg-yellow-500 hover:bg-yellow-600 w-12 h-12 rounded-full flex items-center justify-center mr-2 transition duration-300">
+                <span className="font-medium">CV</span>
+              </div>
+              <span>Download CV</span>
+            </button>
+          </div>
+        </div>
+        
+        {/* Image */}
+        <div className="md:w-1/2 flex justify-center">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <img 
+              src={profileImg} 
+              alt="Profile" 
+              className="rounded-full border-4 border-yellow-500 w-full h-full object-cover shadow-2xl"
+            />
+            <div className="absolute inset-0 rounded-full border-4 border-transparent animate-ping opacity-0"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
