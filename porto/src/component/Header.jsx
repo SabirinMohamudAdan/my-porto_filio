@@ -416,7 +416,7 @@ import profileImg from '../assets/spii.jpg'; // High-resolution professional hea
 const Header = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
-  const roles = ["Web Developer", "", "UI/UX Designer"];
+  const roles = ["Web Developer", ".........", "UI/UX Designer"];
   const roleRef = useRef(null);
   const imageRef = useRef(null);
   const headerRef = useRef(null);
