@@ -118,3 +118,95 @@
 // export default Project;
 
 // -----------------
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import project1 from '../assets/project1.jpg';
+import project2 from '../assets/project2.jpg';
+import project3 from '../assets/project3.jpg';
+
+const projects = [
+  {
+    image: project1,
+    title: "E-commerce Platform",
+    description: "Full-featured online store with React, Node.js, and MongoDB",
+    tags: ["React", "Node.js", "MongoDB"],
+    link: "#"
+  },
+  {
+    image: project2,
+    title: "Task Management App",
+    description: "Productivity application with real-time updates",
+    tags: ["React", "Firebase", "Material UI"],
+    link: "#"
+  },
+  {
+    image: project3,
+    title: "Portfolio Website",
+    description: "Custom portfolio design with animations",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "#"
+  }
+];
+
+const Project = () => {
+  return (
+    <section id="project" className="py-20 bg-gray-800">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            My <span className="text-yellow-500">Projects</span>
+          </h2>
+          <p className="text-gray-400">Most recent work</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-gray-900 rounded-lg overflow-hidden shadow-xl"
+            >
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition duration-500 hover:scale-110"
+                />
+              </div>
+              
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, i) => (
+                    <span 
+                      key={i}
+                      className="bg-gray-700 text-yellow-500 px-3 py-1 rounded-full text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <a 
+                  href={project.link}
+                  className="inline-block text-yellow-500 hover:text-yellow-400 font-medium"
+                >
+                  View Project →
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Project;
