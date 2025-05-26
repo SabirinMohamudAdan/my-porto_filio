@@ -679,3 +679,85 @@
 // export default Header;
 
 // --------------------------
+import React, { useState, useEffect, useRef } from 'react';
+import { FaReact, FaNode } from 'react-icons/fa'; // Importing React and Node icons
+import profileImg from '../assets/spii.jpg'; // High-resolution professional headshot
+
+const Header = () => {
+  // ... (keep all existing state and effect hooks)
+
+  return (
+    <header 
+      id="home" 
+      ref={headerRef}
+      className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center pt-20 overflow-hidden relative"
+    >
+      {/* ... (keep all decorative elements and text content sections) */}
+
+      {/* Professional image with dynamic effects */}
+      <div 
+        className="lg:w-1/2 flex justify-center relative mt-16 lg:mt-0"
+        onMouseEnter={() => handleImageHover(true)}
+        onMouseLeave={() => handleImageHover(false)}
+      >
+        <div 
+          ref={imageRef}
+          className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] transition-all duration-700 ease-out"
+        >
+          {/* Glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full 
+                        blur-xl opacity-20 animate-pulse"></div>
+          
+          {/* Main profile image */}
+          <img 
+            src={profileImg} 
+            alt="Sabirin Mohamud - Professional Web Developer" 
+            className="relative rounded-full border-4 border-yellow-500 w-full h-full object-cover shadow-2xl z-10
+                      transition-all duration-500 ease-out"
+          />
+          
+          {/* Floating tech badges with icons */}
+          <div className={`absolute -bottom-5 -right-5 w-24 h-24 bg-gray-800 rounded-full border-2 border-yellow-500 
+                          flex items-center justify-center shadow-lg transition-all duration-700 ease-out
+                          ${isHovering ? 'translate-x-2 -translate-y-2 rotate-12' : ''}`}>
+            <FaReact className="text-4xl text-blue-400" /> {/* React icon */}
+          </div>
+          
+          <div className={`absolute -top-5 -left-5 w-20 h-20 bg-gray-800 rounded-full border-2 border-yellow-500 
+                          flex items-center justify-center shadow-lg transition-all duration-700 ease-out delay-75
+                          ${isHovering ? '-translate-x-2 translate-y-2 -rotate-12' : ''}`}>
+            <FaNode className="text-4xl text-green-500" /> {/* Node.js icon */}
+          </div>
+          
+          {/* Animated connection lines */}
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <line 
+              x1="70%" y1="70%" x2="85%" y2="85%" 
+              stroke="url(#lineGradient)" 
+              strokeWidth="2" 
+              strokeDasharray="0 10"
+              className={`transition-all duration-1000 ease-out ${isHovering ? 'opacity-100' : 'opacity-0'}`}
+            />
+            <line 
+              x1="30%" y1="30%" x2="15%" y2="15%" 
+              stroke="url(#lineGradient)" 
+              strokeWidth="2" 
+              strokeDasharray="0 10"
+              className={`transition-all duration-1000 ease-out delay-100 ${isHovering ? 'opacity-100' : 'opacity-0'}`}
+            />
+            <defs>
+              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#fbbf24" stopOpacity="0.3" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+      {/* ... (keep all custom animations and closing tags) */}
+    </header>
+  );
+};
+
+export default Header;
