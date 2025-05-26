@@ -811,7 +811,7 @@ const Header = () => {
                           text-white px-5 py-2 rounded-full mb-6 shadow-lg 
                           hover:shadow-xl transition-all duration-500 hover:scale-[1.02]
                           animate-background-shine bg-[length:200%_100%]">
-            <span className="text-lg font-medium tracking-wide">HELLO WORLD</span>
+            <span className="text-lg font-medium tracking-wide">Hi, I am</span>
           </div>
           
           {/* Name with gradient highlight */}
