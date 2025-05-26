@@ -728,3 +728,321 @@
 // export default Header;
 
 // --------------------------
+
+
+import React, { useState, useEffect, useRef } from 'react';
+import { FaReact, FaNode } from 'react-icons/fa';
+import { FaHeart, FaThumbsUp } from 'react-icons/fa';
+import profileImg from '../assets/spii.jpg'; // High-resolution professional headshot
+
+const Header = () => {
+  const [currentRole, setCurrentRole] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const roles = ["Web Developer", ".........", "UI/UX Designer"];
+  const roleRef = useRef(null);
+  const imageRef = useRef(null);
+  const headerRef = useRef(null);
+  
+  // Parallax effect setup
+  useEffect(() => {
+    const handleScroll = () => {
+      if (headerRef.current) {
+        const scrollY = window.scrollY;
+        headerRef.current.style.transform = `translateY(${scrollY * 0.2}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Role rotation with smooth transitions
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3200);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Text animation handler
+  useEffect(() => {
+    if (roleRef.current) {
+      roleRef.current.classList.add('role-exit');
+      setTimeout(() => {
+        if (roleRef.current) {
+          roleRef.current.classList.remove('role-exit');
+          roleRef.current.classList.add('role-enter');
+          setTimeout(() => {
+            if (roleRef.current) roleRef.current.classList.remove('role-enter');
+          }, 800);
+        }
+      }, 500);
+    }
+  }, [currentRole]);
+
+  // Image hover effect
+  const handleImageHover = (hovering) => {
+    setIsHovering(hovering);
+    if (imageRef.current) {
+      imageRef.current.style.transform = hovering 
+        ? 'scale(1.03) rotate(2deg)' 
+        : 'scale(1) rotate(0deg)';
+    }
+  };
+
+  return (
+    <header 
+      id="home" 
+      ref={headerRef}
+      className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center pt-20 overflow-hidden relative"
+    >
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-yellow-500 rounded-full filter blur-3xl opacity-10 animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-yellow-400 rounded-full filter blur-2xl opacity-10 animate-float-delay"></div>
+        <div className="absolute top-2/3 left-2/3 w-32 h-32 bg-yellow-300 rounded-full filter blur-xl opacity-10 animate-float"></div>
+      </div>
+
+      <div className="container mx-auto px-6 py-24 flex flex-col lg:flex-row items-center justify-between relative z-10">
+        {/* Text Content */}
+        <div className="lg:w-1/2 text-center lg:text-left mb-16 lg:mb-0">
+          {/* Greeting badge with micro-interaction */}
+          <div className="inline-block bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-500 
+                          text-white px-5 py-2 rounded-full mb-6 shadow-lg 
+                          hover:shadow-xl transition-all duration-500 hover:scale-[1.02]
+                          animate-background-shine bg-[length:200%_100%]">
+            <span className="text-lg font-medium tracking-wide">HELLO WORLD</span>
+          </div>
+          
+          {/* Name with gradient highlight */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+              SABIRIN
+            </span>{' '}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400
+             to-yellow-600">
+              MOHAMUD
+            </span>
+          </h1>
+          
+          {/* Animated role text */}
+          <div className="h-20 md:h-24 mb-8 overflow-hidden relative">
+            <h2 
+              ref={roleRef}
+              className="text-3xl md:text-4xl font-semibold bg-clip-text text-transparent 
+                        bg-gradient-to-r from-yellow-400 to-yellow-600 tracking-wide"
+            >
+              {roles[currentRole]}
+            </h2>
+            <div className="absolute bottom-0 left-0 w-24 h-1 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full"></div>
+          </div>
+          
+          {/* Description with highlighted skills */}
+          <p className="text-gray-300 mb-10 max-w-2xl text-lg md:text-xl leading-relaxed">
+            Crafting <span className="text-yellow-400 font-medium">high-performance</span> digital experiences with 
+            <span className="text-white font-semibold"> React</span>, 
+            <span className="text-white font-semibold"> Node.js</span>, and 
+            <span className="text-white font-semibold"> modern web architecture</span>. 
+            Specializing in <span className="text-yellow-400">scalable solutions</span> that 
+            <span className="text-white font-medium"> engage users</span> and 
+            <span className="text-white font-medium"> drive results</span>.
+          </p>
+          
+          {/* Action buttons with advanced interactions */}
+          <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+            <button 
+              className="relative group bg-gradient-to-r from-yellow-500 to-yellow-600 text-white 
+                        px-8 py-4 rounded-xl font-medium tracking-wide shadow-lg
+                        transition-all duration-500 hover:shadow-xl hover:-translate-y-1
+                        overflow-hidden isolate"
+              aria-label="Contact Me"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+                GET IN TOUCH
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-500 opacity-0 
+                              group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 rounded-xl border-2 border-yellow-400 opacity-0 
+                              group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+            
+            <button 
+              className="relative group flex items-center justify-center gap-3 px-6 py-4
+                        text-gray-300 hover:text-white transition-colors duration-300"
+              aria-label="Download CV"
+            >
+              <div className="relative flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 
+                              rounded-full w-12 h-12 group-hover:scale-110 transition-transform duration-300"></div>
+                <div className="relative w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center 
+                              group-hover:bg-transparent transition-colors duration-300">
+                  <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                  </svg>
+                </div>
+                <div className="absolute inset-0 rounded-full border-2 border-yellow-400 opacity-0 
+                                group-hover:opacity-100 group-hover:animate-ping-slow transition-opacity duration-300"></div>
+              </div>
+              <span className="font-medium">DOWNLOAD CV</span>
+            </button>
+          </div>
+        </div>
+        
+        {/* Professional image with dynamic effects */}
+        <div 
+          className="lg:w-1/2 flex justify-center relative mt-16 lg:mt-0"
+          onMouseEnter={() => handleImageHover(true)}
+          onMouseLeave={() => handleImageHover(false)}
+        >
+          <div 
+            ref={imageRef}
+            className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] transition-all duration-700 ease-out"
+          >
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full 
+                          blur-xl opacity-20 animate-pulse"></div>
+            
+            {/* Main profile image */}
+            <img 
+              src={profileImg} 
+              alt="Sabirin Mohamud - Professional Web Developer" 
+              className="relative rounded-full border-4 border-yellow-500 w-full h-full object-cover shadow-2xl z-10
+                        transition-all duration-500 ease-out"
+            />
+            
+            {/* Floating tech badges */}
+            {/* <div className={`absolute -bottom-5 -right-5 w-24 h-24 bg-gray-800 rounded-full border-2 border-yellow-500 
+                            flex items-center justify-center shadow-lg transition-all duration-700 ease-out
+                            ${isHovering ? 'translate-x-2 -translate-y-2 rotate-12' : ''}`}>
+              <span className="text-yellow-400 font-bold text-sm">REACT</span>
+            </div>
+
+            
+            <div className={`absolute -top-5 -left-5 w-20 h-20 bg-gray-800 rounded-full border-2 border-yellow-500 
+                            flex items-center justify-center shadow-lg transition-all duration-700 ease-out delay-75
+                            ${isHovering ? '-translate-x-2 translate-y-2 -rotate-12' : ''}`}>
+              <span className="text-yellow-400 font-bold text-sm">NODE</span>
+            </div> */}
+
+
+            {/* Floating tech badges with professional icons */}
+{/* Premium Portfolio Tech Badges */}
+{/* Like/Love Reaction Badges */}
+<div className="absolute -right-6 -bottom-6 z-20">
+  <div className={`relative w-28 h-28 bg-gray-800/90 backdrop-blur-md rounded-2xl 
+                  border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out
+                  group ${isHovering ? 'translate-y-2 -rotate-3 scale-[1.02]' : ''}
+                  hover:shadow-pink-500/20 hover:border-pink-500/40`}>
+    <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+      {/* Heart Icon Container */}
+      <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
+                     group-hover:bg-pink-500/10 group-hover:shadow-pink-500/10">
+        <FaHeart className="text-5xl text-pink-500 transition-transform duration-500 
+                           group-hover:scale-110 group-hover:animate-pulse" />
+      </div>
+      {/* Reaction Count */}
+      <span className="text-xs font-medium text-gray-300 mt-1">
+        24K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Loves</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div className="absolute -left-6 -top-6 z-20">
+  <div className={`relative w-24 h-24 bg-gray-800/90 backdrop-blur-md rounded-2xl 
+                  border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out delay-100
+                  group ${isHovering ? 'translate-y-2 rotate-3 scale-[1.02]' : ''}
+                  hover:shadow-blue-500/20 hover:border-blue-500/40`}>
+    <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+      {/* Thumbs Up Icon Container */}
+      <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
+                     group-hover:bg-blue-500/10 group-hover:shadow-blue-500/10">
+        <FaThumbsUp className="text-4xl  text-yellow-500 transition-transform duration-500 
+                             group-hover:scale-110 group-hover:rotate-12" />
+      </div>
+      {/* Reaction Count */}
+      <span className="text-xs font-medium text-gray-300 mt-1">
+        18K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Likes</span>
+      </span>
+    </div>
+  </div>
+</div>
+{/* -------------------- */}
+            
+            {/* Animated connection lines */}
+            <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <line 
+                x1="70%" y1="70%" x2="85%" y2="85%" 
+                stroke="url(#lineGradient)" 
+                strokeWidth="2" 
+                strokeDasharray="0 10"
+                className={`transition-all duration-1000 ease-out ${isHovering ? 'opacity-100' : 'opacity-0'}`}
+              />
+              <line 
+                x1="30%" y1="30%" x2="15%" y2="15%" 
+                stroke="url(#lineGradient)" 
+                strokeWidth="2" 
+                strokeDasharray="0 10"
+                className={`transition-all duration-1000 ease-out delay-100 ${isHovering ? 'opacity-100' : 'opacity-0'}`}
+              />
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.7" />
+                  <stop offset="100%" stopColor="#fbbf24" stopOpacity="0.3" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      {/* Custom animations */}
+      <style jsx global>{`
+        @keyframes roleEnter {
+          0% { opacity: 0; transform: translateY(15px) scale(0.95); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes roleExit {
+          0% { opacity: 1; transform: translateY(0) scale(1); }
+          100% { opacity: 0; transform: translateY(-15px) scale(0.95); }
+        }
+        @keyframes ping-slow {
+          0% { transform: scale(0.95); opacity: 0.8; }
+          70% { transform: scale(1.2); opacity: 0.2; }
+          100% { transform: scale(1.3); opacity: 0; }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+        }
+        @keyframes background-shine {
+          from { background-position: 0 0; }
+          to { background-position: -200% 0; }
+        }
+        .role-enter {
+          animation: roleEnter 0.8s cubic-bezier(0.2, 0, 0.1, 1) forwards;
+        }
+        .role-exit {
+          animation: roleExit 0.5s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+        }
+        .animate-ping-slow {
+          animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        .animate-float {
+          animation: float 8s ease-in-out infinite;
+        }
+        .animate-float-delay {
+          animation: float 8s ease-in-out infinite 2s;
+        }
+        .animate-background-shine {
+          animation: background-shine 2s linear infinite;
+        }
+      `}</style>
+    </header>
+  );
+};
+
+export default Header;
