@@ -221,185 +221,186 @@
 // export default Project;
 // ---------------------------------
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import project1 from '../assets/img.jpg';
-import project2 from '../assets/img3.jpg';
-import project3 from '../assets/img6.jpg';
-import project4 from '../assets/img7.jpg';
+// import React from 'react';
+// import { motion } from 'framer-motion';
+// import project1 from '../assets/img.jpg';
+// import project2 from '../assets/img3.jpg';
+// import project3 from '../assets/img6.jpg';
+// import project4 from '../assets/img7.jpg';
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3
-    }
-  }
-};
+// // Animation variants
+// const containerVariants = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.2,
+//       delayChildren: 0.3
+//     }
+//   }
+// };
 
-const itemVariants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  },
-  hover: {
-    y: -10,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-};
+// const itemVariants = {
+//   hidden: { y: 50, opacity: 0 },
+//   visible: {
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       duration: 0.6,
+//       ease: "easeOut"
+//     }
+//   },
+//   hover: {
+//     y: -10,
+//     transition: {
+//       duration: 0.3,
+//       ease: "easeOut"
+//     }
+//   }
+// };
 
-const projects = [
-  {
-    image: project1,
-    title: "E-commerce Platform",
-    description: "Full-featured online store with React, Node.js, and MongoDB",
-    tags: ["React", "Node.js", "MongoDB"],
-    link: "#"
-  },
-  {
-    image: project2,
-    title: "Task Management App",
-    description: "Productivity application with real-time updates",
-    tags: ["React", "Firebase", "Material UI"],
-    link: "#"
-  },
-  {
-    image: project3,
-    title: "Portfolio Website",
-    description: "Custom portfolio design with animations",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://spa-restuarant.vercel.app/"
-  },
-  {
-    image: project4,
-    title: "Portfolio Website",
-    description: "Custom portfolio design with animations",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "#"
-  }
-];
+// const projects = [
+//   {
+//     image: project1,
+//     title: "E-commerce Platform",
+//     description: "Full-featured online store with React, Node.js, and MongoDB",
+//     tags: ["React", "Node.js", "MongoDB"],
+//     link: "#"
+//   },
+//   {
+//     image: project2,
+//     title: "Task Management App",
+//     description: "Productivity application with real-time updates",
+//     tags: ["React", "Firebase", "Material UI"],
+//     link: "#"
+//   },
+//   {
+//     image: project3,
+//     title: "Portfolio Website",
+//     description: "Custom portfolio design with animations",
+//     tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+//     link: "https://spa-restuarant.vercel.app/"
+//   },
+//   {
+//     image: project4,
+//     title: "Portfolio Website",
+//     description: "Custom portfolio design with animations",
+//     tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+//     link: "#"
+//   }
+// ];
 
-const Project = () => {
-  return (
-    <section id="project" className="py-20 bg-gray-800">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            My <span className="text-yellow-500">Projects</span>
-          </h2>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-gray-400 text-lg"
-          >
-            Explore my recent work
-          </motion.p>
-        </motion.div>
+// const Project = () => {
+//   return (
+//     <section id="project" className="py-20 bg-gray-800">
+//       <div className="container mx-auto px-4">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6 }}
+//           viewport={{ once: true, margin: "-100px" }}
+//           className="text-center mb-16"
+//         >
+//           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+//             My <span className="text-yellow-500">Projects</span>
+//           </h2>
+//           <motion.p 
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             transition={{ delay: 0.3 }}
+//             className="text-gray-400 text-lg"
+//           >
+//             Explore my recent work
+//           </motion.p>
+//         </motion.div>
         
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover="hover"
-              className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-700 hover:border-yellow-500 transition-colors duration-300"
-            >
-              <motion.div 
-                className="h-64 overflow-hidden relative"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <motion.a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
-                  >
-                    Live Preview
-                  </motion.a>
-                </div>
-              </motion.div>
+//         <motion.div
+//           variants={containerVariants}
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true, margin: "-100px" }}
+//           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+//         >
+//           {projects.map((project, index) => (
+//             <motion.div
+//               key={index}
+//               variants={itemVariants}
+//               whileHover="hover"
+//               className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-700 hover:border-yellow-500 transition-colors duration-300"
+//             >
+//               <motion.div 
+//                 className="h-64 overflow-hidden relative"
+//                 whileHover={{ scale: 1.02 }}
+//                 transition={{ duration: 0.3 }}
+//               >
+//                 <img 
+//                   src={project.image} 
+//                   alt={project.title}
+//                   className="w-full h-full object-cover"
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+//                   <motion.a
+//                     href={project.link}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     whileHover={{ scale: 1.05 }}
+//                     whileTap={{ scale: 0.95 }}
+//                     className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+//                   >
+//                     Live Preview
+//                   </motion.a>
+//                 </div>
+//               </motion.div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
+//               <div className="p-6">
+//                 <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+//                 <p className="text-gray-300 mb-4">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.1 * i }}
-                      className="bg-gray-800 text-yellow-400 px-3 py-1 rounded-full text-xs font-medium"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
+//                 <div className="flex flex-wrap gap-2 mb-6">
+//                   {project.tags.map((tag, i) => (
+//                     <motion.span
+//                       key={i}
+//                       initial={{ opacity: 0, scale: 0.8 }}
+//                       animate={{ opacity: 1, scale: 1 }}
+//                       transition={{ delay: 0.1 * i }}
+//                       className="bg-gray-800 text-yellow-400 px-3 py-1 rounded-full text-xs font-medium"
+//                     >
+//                       {tag}
+//                     </motion.span>
+//                   ))}
+//                 </div>
                 
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <a 
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-yellow-500 hover:text-yellow-400 font-medium group"
-                  >
-                    View Project
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform"
-                      viewBox="0 0 20 20" 
-                      fill="currentColor"
-                    >
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </a>
-                </motion.div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+//                 <motion.div
+//                   whileHover={{ x: 5 }}
+//                   transition={{ type: "spring", stiffness: 300 }}
+//                 >
+//                   <a 
+//                     href={project.link}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className="inline-flex items-center text-yellow-500 hover:text-yellow-400 font-medium group"
+//                   >
+//                     View Project
+//                     <svg 
+//                       xmlns="http://www.w3.org/2000/svg" 
+//                       className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform"
+//                       viewBox="0 0 20 20" 
+//                       fill="currentColor"
+//                     >
+//                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+//                     </svg>
+//                   </a>
+//                 </motion.div>
+//               </div>
+//             </motion.div>
+//           ))}
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// };
 
-export default Project;
+// export default Project;
 
 
+// -------------------------
