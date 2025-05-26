@@ -281,7 +281,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus: outline"
+            className="text-white focus:  outline-dashed"
           >
             {isOpen ? <RiCloseLine size={24} /> : <RiMenu3Line size={24} />}
           </button>
