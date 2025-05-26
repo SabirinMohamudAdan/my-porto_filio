@@ -249,62 +249,63 @@
 // export default Navbar;
 
 
-import React, { useState } from 'react';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+// import React, { useState } from 'react';
+// import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+// const Navbar = () => {
+//   const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <nav className="bg-gray-900 p-4 fixed w-full top-0 z-50 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-2xl font-bold">
-          <a href="#" className="hover:text-yellow-500 transition duration-300">
-            <span className='text-yellow-500'>Sabirin</span>Mohamud.
-          </a>
-        </div>
+//   return (
+//     <nav className="bg-gray-900 p-4 fixed w-full top-0 z-50 shadow-lg">
+//       <div className="container mx-auto flex justify-between items-center">
+//         <div className="text-white text-2xl font-bold">
+//           <a href="#" className="hover:text-yellow-500 transition duration-300">
+//             <span className='text-yellow-500'>Sabirin</span>Mohamud.
+//           </a>
+//         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
-          {['Home', 'About', 'Service', 'Project', 'Contact'].map((item) => (
-            <a 
-              href={`#${item.toLowerCase()}`} 
-              key={item}
-              className="text-white hover:text-yellow-500 transition duration-300"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
+//         {/* Desktop Menu */}
+//         <div className="hidden md:flex space-x-6">
+//           {['Home', 'About', 'Service', 'Project', 'Contact'].map((item) => (
+//             <a 
+//               href={`#${item.toLowerCase()}`} 
+//               key={item}
+//               className="text-white hover:text-yellow-500 transition duration-300"
+//             >
+//               {item}
+//             </a>
+//           ))}
+//         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:  outline-dashed"
-          >
-            {isOpen ? <RiCloseLine size={24} /> : <RiMenu3Line size={24} />}
-          </button>
-        </div>
-      </div>
+//         {/* Mobile Menu Button */}
+//         <div className="md:hidden">
+//           <button 
+//             onClick={() => setIsOpen(!isOpen)}
+//             className="text-white focus:  outline-dashed"
+//           >
+//             {isOpen ? <RiCloseLine size={24} /> : <RiMenu3Line size={24} />}
+//           </button>
+//         </div>
+//       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-gray-800 mt-4 py-2 px-4 rounded-lg">
-          {['Home', 'About', 'Service', 'Project', 'Contact'].map((item) => (
-            <a 
-              href={`#${item.toLowerCase()}`} 
-              key={item}
-              className="block py-2 text-white hover:text-yellow-500 transition duration-300"
-              onClick={() => setIsOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
-  );
-};
+//       {/* Mobile Menu */}
+//       {isOpen && (
+//         <div className="md:hidden bg-gray-800 mt-4 py-2 px-4 rounded-lg">
+//           {['Home', 'About', 'Service', 'Project', 'Contact'].map((item) => (
+//             <a 
+//               href={`#${item.toLowerCase()}`} 
+//               key={item}
+//               className="block py-2 text-white hover:text-yellow-500 transition duration-300"
+//               onClick={() => setIsOpen(false)}
+//             >
+//               {item}
+//             </a>
+//           ))}
+//         </div>
+//       )}
+//     </nav>
+//   );
+// };
 
-export default Navbar;
+// export default Navbar;
+
