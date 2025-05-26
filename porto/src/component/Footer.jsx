@@ -66,7 +66,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <FaGithub />, url: "https://github.com/yourusername" },
+    { icon: <FaGithub />, url: "https://github.com/SabirinMohamudAdan" },
     { icon: <FaLinkedin />, url: "https://linkedin.com/in/yourprofile" },
     { icon: <FaTwitter />, url: "https://twitter.com/yourhandle" },
     { icon: <FaEnvelope />, url: "mailto:youremail@example.com" }
