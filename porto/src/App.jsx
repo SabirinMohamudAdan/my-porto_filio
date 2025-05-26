@@ -51,3 +51,25 @@
 
 // export default App;
 
+import React from 'react';
+import Navbar from './components/Navbar';
+import Header from './components/Header';
+import About from './components/About';
+import Service from './components/Service';
+import Project from './components/Project';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <div className="App">
+      <Navbar />
+      <Header />
+      <About />
+      <Service />
+      <Project />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
