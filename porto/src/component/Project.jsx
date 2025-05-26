@@ -146,7 +146,7 @@ const projects = [
     title: "Portfolio Website",
     description: "Custom portfolio design with animations",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "#"
+    link: "#https://spa-restuarant.vercel.app/"
   }
   ,
   {
