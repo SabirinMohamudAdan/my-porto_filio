@@ -37,7 +37,7 @@
 // };
 
 // export default About;
-
+// -------------------------
 // import React from 'react';
 // import { motion } from 'framer-motion';
 // import img from '../assets/spii.jpg';
@@ -148,3 +148,95 @@
 // };
 
 // export default About;
+
+
+// -------------------------------
+
+import React from 'react';
+import aboutImg from '../assets/about.jpg'; // Replace with your image
+
+const About = () => {
+  const skills = [
+    { name: 'HTML/CSS', level: 95 },
+    { name: 'JavaScript', level: 90 },
+    { name: 'React', level: 85 },
+    { name: 'Node.js', level: 80 },
+    { name: 'MongoDB', level: 75 },
+    { name: 'UI/UX', level: 70 },
+  ];
+
+  return (
+    <section id="about" className="py-20 bg-gray-800">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            About <span className="text-yellow-500">Me</span>
+          </h2>
+          <p className="text-gray-400">My introduction</p>
+        </div>
+        
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="lg:w-1/2 flex justify-center">
+            <img 
+              src={aboutImg} 
+              alt="About" 
+              className="rounded-lg w-full max-w-md border-4 border-yellow-500 shadow-xl"
+            />
+          </div>
+          
+          <div className="lg:w-1/2">
+            <p className="text-gray-300 mb-6">
+              I'm a passionate Full Stack Developer with 3+ years of experience creating 
+              web applications. My expertise includes frontend development with React, 
+              backend development with Node.js, and database management with MongoDB.
+            </p>
+            
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="bg-gray-700 p-4 rounded-lg">
+                <h4 className="text-yellow-500 font-medium">Experience</h4>
+                <p className="text-white">3+ Years</p>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-lg">
+                <h4 className="text-yellow-500 font-medium">Projects</h4>
+                <p className="text-white">20+ Completed</p>
+              </div>
+            </div>
+            
+            <h3 className="text-xl font-bold text-white mb-4">My Skills</h3>
+            <div className="space-y-3">
+              {skills.map((skill, index) => (
+                <div key={index}>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-gray-300">{skill.name}</span>
+                    <span className="text-gray-300">{skill.level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div 
+                      className="bg-yellow-500 h-2 rounded-full" 
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
+
+
+
+
+
+
+
+
+
+
+
+
+
