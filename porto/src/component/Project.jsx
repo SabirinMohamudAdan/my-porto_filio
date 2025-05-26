@@ -121,9 +121,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import project1 from '../assets/project1.jpg';
-import project2 from '../assets/project2.jpg';
-import project3 from '../assets/project3.jpg';
+import project1 from '../assets/img.jpg';
+import project2 from '../assets/img3.jpg';
+import project3 from '../assets/img6.jpg';
 
 const projects = [
   {
