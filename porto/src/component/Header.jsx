@@ -846,13 +846,7 @@ const Header = () => {
            in the <span className=" text-yellow-500 font-semibold"> MERN stack (MongoDB, Express.js, React, Node.js), </span> with additional expertise in PHP, MySQL, and Java.
            Proficient in building responsive, scalable web applications, I am passionate about solving
            complex problems and creating user-friendly websites
-            {/* Crafting <span className="text-yellow-400 font-medium">high-performance</span> digital experiences with 
-            <span className="text-white font-semibold"> React</span>, 
-            <span className="text-white font-semibold"> Node.js</span>, and 
-            <span className="text-white font-semibold"> modern web architecture</span>. 
-            Specializing in <span className="text-yellow-400">scalable solutions</span> that 
-            <span className="text-white font-medium"> engage users</span> and 
-            <span className="text-white font-medium"> drive results</span>. */}
+         
           </p>
           
           {/* Action buttons with advanced interactions */}
