@@ -608,25 +608,59 @@ const Header = () => {
 
 
             {/* Floating tech badges with professional icons */}
-<div className={`absolute -bottom-5 -right-5 w-24 h-24 bg-gray-800 rounded-full border-2 border-yellow-500 
-                flex items-center justify-center shadow-lg transition-all duration-700 ease-out
-                group ${isHovering ? 'translate-x-2 -translate-y-2 rotate-12' : ''}`}>
-  <div className="relative">
-    <FaReact className="text-4xl text-[#61DAFB] transition-all duration-300 group-hover:scale-110 group-hover:rotate-[30deg]" />
-    <div className="absolute inset-0 rounded-full border-2 border-[#61DAFB] opacity-0 
-                    group-hover:opacity-100 group-hover:animate-ping-slow transition-opacity duration-300"></div>
+{/* Premium Portfolio Tech Badges */}
+<div className="absolute -right-6 -bottom-6 z-20">
+  <div className={`relative w-28 h-28 bg-gray-800/90 backdrop-blur-md rounded-2xl 
+                  border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out
+                  group ${isHovering ? 'translate-y-2 -rotate-3 scale-[1.02]' : ''}
+                  hover:shadow-[#61DAFB]/20 hover:border-[#61DAFB]/40`}>
+    <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+      {/* React Icon Container */}
+      <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
+                     group-hover:bg-[#61DAFB]/10 group-hover:shadow-[#61DAFB]/10">
+        <FaReact className="text-5xl text-[#61DAFB] transition-transform duration-500 
+                           group-hover:scale-110 group-hover:rotate-12" />
+      </div>
+      {/* Success Badge */}
+      <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold 
+                     px-2 py-1 rounded-full flex items-center shadow-md">
+        <span>PRO</span>
+      </div>
+      {/* Label */}
+      <span className="text-xs font-medium text-gray-300 mt-1 opacity-0 
+                      group-hover:opacity-100 transition-opacity duration-300">
+        React Expert
+      </span>
+    </div>
   </div>
 </div>
 
-<div className={`absolute -top-5 -left-5 w-20 h-20 bg-gray-800 rounded-full border-2 border-yellow-500 
-                flex items-center justify-center shadow-lg transition-all duration-700 ease-out delay-75
-                group ${isHovering ? '-translate-x-2 translate-y-2 -rotate-12' : ''}`}>
-  <div className="relative">
-    <FaNode className="text-4xl text-[#68A063] transition-all duration-300 group-hover:scale-110 group-hover:-rotate-[15deg]" />
-    <div className="absolute inset-0 rounded-full border-2 border-[#68A063] opacity-0 
-                    group-hover:opacity-100 group-hover:animate-ping-slow transition-opacity duration-300"></div>
+<div className="absolute -left-6 -top-6 z-20">
+  <div className={`relative w-24 h-24 bg-gray-800/90 backdrop-blur-md rounded-2xl 
+                  border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out delay-100
+                  group ${isHovering ? 'translate-y-2 rotate-3 scale-[1.02]' : ''}
+                  hover:shadow-[#68A063]/20 hover:border-[#68A063]/40`}>
+    <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+      {/* Node.js Icon Container */}
+      <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
+                     group-hover:bg-[#68A063]/10 group-hover:shadow-[#68A063]/10">
+        <FaNode className="text-4xl text-[#68A063] transition-transform duration-500 
+                          group-hover:scale-110 group-hover:-rotate-12" />
+      </div>
+      {/* Success Badge */}
+      <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold 
+                     px-2 py-1 rounded-full flex items-center shadow-md">
+        <span>PRO</span>
+      </div>
+      {/* Label */}
+      <span className="text-xs font-medium text-gray-300 mt-1 opacity-0 
+                      group-hover:opacity-100 transition-opacity duration-300">
+        Node Specialist
+      </span>
+    </div>
   </div>
 </div>
+{/* -------------------- */}
             
             {/* Animated connection lines */}
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
