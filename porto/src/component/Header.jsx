@@ -843,7 +843,7 @@ const Header = () => {
 
 
                Welcome to my portfolio! I am Sabirin, a skilled Full Stack Developer specializing
-           in the <span className="text-white font-semibold"> MERN stack (MongoDB, Express.js, React, Node.js), </span> with additional expertise in PHP, MySQL, and Java.
+           in the <span className=" text-yellow-500 font-semibold"> MERN stack (MongoDB, Express.js, React, Node.js), </span> with additional expertise in PHP, MySQL, and Java.
            Proficient in building responsive, scalable web applications, I am passionate about solving
            complex problems and creating user-friendly websites
             {/* Crafting <span className="text-yellow-400 font-medium">high-performance</span> digital experiences with 
