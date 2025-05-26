@@ -252,7 +252,7 @@
 import React, { useState } from 'react';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
-const Navbar = () => {
+const Navv = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -307,4 +307,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navv;
