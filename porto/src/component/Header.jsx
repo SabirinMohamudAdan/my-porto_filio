@@ -592,17 +592,40 @@ const Header = () => {
             />
             
             {/* Floating tech badges */}
-            <div className={`absolute -bottom-5 -right-5 w-24 h-24 bg-gray-800 rounded-full border-2 border-yellow-500 
+            {/* <div className={`absolute -bottom-5 -right-5 w-24 h-24 bg-gray-800 rounded-full border-2 border-yellow-500 
                             flex items-center justify-center shadow-lg transition-all duration-700 ease-out
                             ${isHovering ? 'translate-x-2 -translate-y-2 rotate-12' : ''}`}>
               <span className="text-yellow-400 font-bold text-sm">REACT</span>
             </div>
+
             
             <div className={`absolute -top-5 -left-5 w-20 h-20 bg-gray-800 rounded-full border-2 border-yellow-500 
                             flex items-center justify-center shadow-lg transition-all duration-700 ease-out delay-75
                             ${isHovering ? '-translate-x-2 translate-y-2 -rotate-12' : ''}`}>
               <span className="text-yellow-400 font-bold text-sm">NODE</span>
-            </div>
+            </div> */}
+
+
+            {/* Floating tech badges with professional icons */}
+<div className={`absolute -bottom-5 -right-5 w-24 h-24 bg-gray-800 rounded-full border-2 border-yellow-500 
+                flex items-center justify-center shadow-lg transition-all duration-700 ease-out
+                group ${isHovering ? 'translate-x-2 -translate-y-2 rotate-12' : ''}`}>
+  <div className="relative">
+    <FaReact className="text-4xl text-[#61DAFB] transition-all duration-300 group-hover:scale-110 group-hover:rotate-[30deg]" />
+    <div className="absolute inset-0 rounded-full border-2 border-[#61DAFB] opacity-0 
+                    group-hover:opacity-100 group-hover:animate-ping-slow transition-opacity duration-300"></div>
+  </div>
+</div>
+
+<div className={`absolute -top-5 -left-5 w-20 h-20 bg-gray-800 rounded-full border-2 border-yellow-500 
+                flex items-center justify-center shadow-lg transition-all duration-700 ease-out delay-75
+                group ${isHovering ? '-translate-x-2 translate-y-2 -rotate-12' : ''}`}>
+  <div className="relative">
+    <FaNode className="text-4xl text-[#68A063] transition-all duration-300 group-hover:scale-110 group-hover:-rotate-[15deg]" />
+    <div className="absolute inset-0 rounded-full border-2 border-[#68A063] opacity-0 
+                    group-hover:opacity-100 group-hover:animate-ping-slow transition-opacity duration-300"></div>
+  </div>
+</div>
             
             {/* Animated connection lines */}
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
