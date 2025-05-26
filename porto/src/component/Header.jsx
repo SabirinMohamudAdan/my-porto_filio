@@ -262,3 +262,148 @@
 
 // export default Header;
 
+// ---------------
+import React, { useState, useEffect, useRef } from 'react';
+import profileImg from '../assets/spii.jpg'; // Replace with your image
+
+const Header = () => {
+  const [currentRole, setCurrentRole] = useState(0);
+  const roles = ["Web Developer", "Full Stack Engineer", "UI/UX Designer"];
+  const roleRef = useRef(null);
+  
+  // Role rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Animation for role text
+  useEffect(() => {
+    if (roleRef.current) {
+      roleRef.current.classList.add('fade-out');
+      setTimeout(() => {
+        if (roleRef.current) {
+          roleRef.current.classList.remove('fade-out');
+          roleRef.current.classList.add('fade-in');
+          setTimeout(() => {
+            if (roleRef.current) roleRef.current.classList.remove('fade-in');
+          }, 500);
+        }
+      }, 500);
+    }
+  }, [currentRole]);
+
+  return (
+    <header id="home" className="min-h-screen bg-gray-900 flex items-center pt-20 overflow-hidden">
+      <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-between">
+        {/* Text Content */}
+        <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0 z-10">
+          <div className="inline-block bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-4 py-2 rounded-lg mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <span className="text-lg font-medium">Hello, I'm</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+            Sabirin <span className="text-yellow-500">Mohamud</span>
+          </h1>
+          
+          <div className="h-16 md:h-20 mb-6 overflow-hidden">
+            <h2 
+              ref={roleRef}
+              className="text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 transition-all duration-500"
+            >
+              {roles[currentRole]}
+            </h2>
+          </div>
+          
+          <p className="text-gray-300 mb-8 max-w-lg text-lg leading-relaxed">
+            I specialize in building exceptional digital experiences. With expertise in 
+            <span className="text-yellow-400 font-medium"> React</span>, 
+            <span className="text-yellow-400 font-medium"> Node.js</span>, and modern web technologies, 
+            I create <span className="text-white font-medium">fast</span>, 
+            <span className="text-white font-medium"> responsive</span>, and 
+            <span className="text-white font-medium"> user-friendly</span> applications.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <button 
+              className="relative bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-3 rounded-lg font-medium 
+                        transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/30 hover:-translate-y-1
+                        before:absolute before:inset-0 before:bg-gradient-to-r before:from-yellow-600 before:to-yellow-500 
+                        before:rounded-lg before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300
+                        overflow-hidden"
+            >
+              <span className="relative z-10">Contact Me</span>
+            </button>
+            
+            <button className="flex items-center justify-center group">
+              <div className="relative bg-gradient-to-r from-yellow-500 to-yellow-600 w-12 h-12 rounded-full flex items-center justify-center mr-3 
+                            transition-all duration-300 group-hover:shadow-lg group-hover:shadow-yellow-500/30 group-hover:-translate-y-1">
+                <span className="font-medium text-white">CV</span>
+                <div className="absolute inset-0 rounded-full border-2 border-yellow-400 opacity-0 group-hover:opacity-100 group-hover:animate-ping-slow transition-opacity duration-300"></div>
+              </div>
+              <span className="text-white group-hover:text-yellow-400 transition-colors duration-300 font-medium">
+                Download CV
+              </span>
+            </button>
+          </div>
+        </div>
+        
+        {/* Image */}
+        <div className="md:w-1/2 flex justify-center relative">
+          <div className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem]">
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full blur-xl opacity-20 animate-pulse"></div>
+            <img 
+              src={profileImg} 
+              alt="Sabirin Mohamud" 
+              className="relative rounded-full border-4 border-yellow-500 w-full h-full object-cover shadow-2xl 
+                        transition-all duration-500 hover:scale-105 hover:shadow-xl hover:border-yellow-400 z-10"
+            />
+            <div className="absolute -bottom-5 -right-5 w-24 h-24 bg-yellow-500 rounded-full opacity-10 animate-float"></div>
+            <div className="absolute -top-5 -left-5 w-16 h-16 bg-yellow-400 rounded-full opacity-10 animate-float-delay"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Custom animations in global CSS */}
+      <style jsx global>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+          from { opacity: 1; transform: translateY(0); }
+          to { opacity: 0; transform: translateY(-10px); }
+        }
+        @keyframes ping-slow {
+          0% { transform: scale(0.95); opacity: 0.8; }
+          70% { transform: scale(1.1); opacity: 0.2; }
+          100% { transform: scale(1.15); opacity: 0; }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        .fade-in {
+          animation: fadeIn 0.5s ease-out forwards;
+        }
+        .fade-out {
+          animation: fadeOut 0.5s ease-out forwards;
+        }
+        .animate-ping-slow {
+          animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .animate-float-delay {
+          animation: float 6s ease-in-out infinite 1.5s;
+        }
+      `}</style>
+    </header>
+  );
+};
+
+export default Header;
+
