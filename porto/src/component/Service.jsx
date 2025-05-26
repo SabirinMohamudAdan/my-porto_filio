@@ -46,3 +46,70 @@
 
 // --------------------
 
+import React from 'react';
+import { FaCode, FaPaintBrush, FaMobile, FaDatabase, FaSearch, FaServer } from 'react-icons/fa';
+
+const services = [
+  {
+    icon: <FaCode className="text-3xl text-yellow-500" />,
+    title: "Web Development",
+    description: "Custom website development using modern technologies like React, Next.js, and Tailwind CSS."
+  },
+  {
+    icon: <FaMobile className="text-3xl text-yellow-500" />,
+    title: "Mobile Development",
+    description: "Cross-platform mobile app development with React Native for iOS and Android."
+  },
+  {
+    icon: <FaServer className="text-3xl text-yellow-500" />,
+    title: "Backend Development",
+    description: "Robust backend solutions with Node.js, Express, and MongoDB or PostgreSQL."
+  },
+  {
+    icon: <FaPaintBrush className="text-3xl text-yellow-500" />,
+    title: "UI/UX Design",
+    description: "Beautiful, intuitive user interfaces designed with Figma and Adobe XD."
+  },
+  {
+    icon: <FaDatabase className="text-3xl text-yellow-500" />,
+    title: "Database Design",
+    description: "Efficient database architecture and optimization for performance."
+  },
+  {
+    icon: <FaSearch className="text-3xl text-yellow-500" />,
+    title: "SEO Optimization",
+    description: "Improve your website's visibility and ranking on search engines."
+  }
+];
+
+const Service = () => {
+  return (
+    <section id="service" className="py-20 bg-gray-900">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            My <span className="text-yellow-500">Services</span>
+          </h2>
+          <p className="text-gray-400">What I offer</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div 
+              key={index}
+              className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition duration-300 hover:-translate-y-2 shadow-lg"
+            >
+              <div className="mb-4">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+              <p className="text-gray-300">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Service;
