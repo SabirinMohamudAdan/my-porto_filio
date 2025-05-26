@@ -195,7 +195,7 @@
 // --------------------------------------
 
 import React, { useState, useEffect } from 'react';
-import profileImg from '../assets/profile.jpg'; // Replace with your image
+import profileImg from '../assets/spii.jpg'; // Replace with your image
 
 const Header = () => {
   const [currentRole, setCurrentRole] = useState(0);
