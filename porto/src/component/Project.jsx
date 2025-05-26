@@ -148,6 +148,14 @@ const projects = [
     tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "#"
   }
+  ,
+  {
+    image: project4,
+    title: "Portfolio Website",
+    description: "Custom portfolio design with animations",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "#"
+  }
 ];
 
 const Project = () => {
