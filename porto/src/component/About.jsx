@@ -153,7 +153,7 @@
 // -------------------------------
 
 import React from 'react';
-import aboutImg from '../assets/about.jpg'; // Replace with your image
+import aboutImg from '../assets/spii.jpg'; // Replace with your image
 
 const About = () => {
   const skills = [
