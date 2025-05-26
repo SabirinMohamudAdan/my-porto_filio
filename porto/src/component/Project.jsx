@@ -124,7 +124,7 @@ import { motion } from 'framer-motion';
 import project1 from '../assets/img.jpg';
 import project2 from '../assets/img3.jpg';
 import project3 from '../assets/img6.jpg';
-import project4 from '../assets/r.jpg';
+import project4 from '../assets/img5.jpg';
 
 const projects = [
   {
