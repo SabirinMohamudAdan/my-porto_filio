@@ -2710,6 +2710,13 @@ const Header = () => {
               className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] transition-all duration-700 ease-out"
             >
               {/* ... (keep existing image content) */}
+              
+              <img 
+                 src={profileImg} 
+                alt="Sabirin Mohamud - Professional Web Developer" 
+               className="relative rounded-full border-4 border-yellow-500 w-full h-full object-cover shadow-2xl z-10
+                          transition-all duration-500 ease-out"
+              />  
             </div>
           </div>
         </div>
