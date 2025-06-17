@@ -50,7 +50,7 @@ const About = () => {
     { name: 'Backend', icon: <FaNodeJs className="text-2xl" />, items: ['Node.js', 
       'Express', 'PHP'] },
     { name: 'Database', icon: <FaDatabase className="text-2xl" />, items: ['MongoDB', 'MySQL', 'PostgreSQL'] },
-    { name: 'Other', icon: <FaCode className="text-2xl" />, items: ['Git', 'Docker', 'AWS', 'REST APIs'] }
+    { name: 'Other', icon: <FaCode className="text-2xl" />, items: ['Git', 'Docker', 'REST APIs'] }
   ];
 
   return (
