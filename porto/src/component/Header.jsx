@@ -2547,8 +2547,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { FaHeart, FaThumbsUp, FaEye, FaDownload } from 'react-icons/fa';
-// import profileImg from '../assets/spii.jpg';
-import profileImg from '../assets/apii.jpg';
+import profileImg from '../assets/spii.jpg';
+// import profileImg from '../assets/apii.jpg';
 
 const Header = () => {
   const [currentRole, setCurrentRole] = useState(0);
