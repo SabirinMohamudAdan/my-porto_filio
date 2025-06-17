@@ -69,7 +69,7 @@ const Footer = () => {
     { icon: <FaGithub />, url: "https://github.com/SabirinMohamudAdan" },
     { icon: <FaLinkedin />, url: "https://linkedin.com/in/yourprofile" },
     { icon: <FaTwitter />, url: "https://twitter.com/yourhandle" },
-    { icon: <FaEnvelope />, url: "mailto:youremail@example.com" }
+    { icon: <FaEnvelope />, url: "mailto:sabrinmohamud247@gmail.com" }
   ];
 
   return (
@@ -98,10 +98,10 @@ const Footer = () => {
                 <div>
                   <h4 className="text-gray-400">Email me at</h4>
                   <a 
-                    href="mailto:youremail@example.com" 
+                    href="sabrinmohamud247@gmail.com" 
                     className="text-white hover:text-yellow-500 transition duration-300"
                   >
-                    youremail@example.com
+                    sabrinmohamud247@gmail.com
                   </a>
                 </div>
               </div>
