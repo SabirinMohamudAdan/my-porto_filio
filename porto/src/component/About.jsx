@@ -45,7 +45,7 @@ import { FaReact, FaNodeJs, FaDatabase, FaCode } from 'react-icons/fa';
 
 const About = () => {
   const skills = [
-    { name: 'Frontend', icon: <FaReact className="text-2xl" />, items: ['React', 
+    { name: 'Frontend', icon: <FaReact className="text-2xl" />, items: ['Html','Css','Javascript','React', 
        'Tailwind CSS', 'Redux'] },
     { name: 'Backend', icon: <FaNodeJs className="text-2xl" />, items: ['Node.js', 
       'Express', 'PHP'] },
