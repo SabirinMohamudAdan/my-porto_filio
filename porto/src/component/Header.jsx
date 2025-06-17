@@ -2628,11 +2628,13 @@ const Header = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-                SABIRIN
+              <span className="bg-clip-text text-transparent bg-gradient-to-r
+               from-white to-gray-300">
+                Sabirin
               </span>{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600">
-                MOHAMUD
+              <span className="bg-clip-text text-transparent bg-gradient-to-r
+               from-yellow-400 to-yellow-600">
+                Mohamud
               </span>
             </h1>
             
