@@ -2686,7 +2686,7 @@ const Header = () => {
                   <div className="relative w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center 
                                 group-hover:bg-transparent transition-colors duration-300">
                     <div className="flex flex-col items-center">
-                      <FaEye className="w-4 h-4 text-blue-400" />
+                      <FaEye className="w-4 h-4 text-pink-500" />
                       <FaDownload className="w-4 h-4 text-white mt-1" />
                     </div>
                   </div>
