@@ -1242,42 +1242,42 @@
 //                           transition-all duration-500 ease-out"
 //               />
               
-//               {/* Floating badges */}
-//               <div className="absolute -right-6 -bottom-6 z-20">
-//                 <div className={`relative w-28 h-28 bg-gray-800/90 backdrop-blur-md rounded-2xl 
-//                                 border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out
-//                                 group ${isHovering ? 'translate-y-2 -rotate-3 scale-[1.02]' : ''}
-//                                 hover:shadow-pink-500/20 hover:border-pink-500/40`}>
-//                   <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-//                     <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
-//                                    group-hover:bg-pink-500/10 group-hover:shadow-pink-500/10">
-//                       <FaHeart className="text-5xl text-pink-500 transition-transform duration-500 
-//                                          group-hover:scale-110 group-hover:animate-pulse" />
-//                     </div>
-//                     <span className="text-xs font-medium text-gray-300 mt-1">
-//                       24K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Loves</span>
-//                     </span>
-//                   </div>
-//                 </div>
-//               </div>
+              // {/* Floating badges */}
+              // <div className="absolute -right-6 -bottom-6 z-20">
+              //   <div className={`relative w-28 h-28 bg-gray-800/90 backdrop-blur-md rounded-2xl 
+              //                   border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out
+              //                   group ${isHovering ? 'translate-y-2 -rotate-3 scale-[1.02]' : ''}
+              //                   hover:shadow-pink-500/20 hover:border-pink-500/40`}>
+              //     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+              //       <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
+              //                      group-hover:bg-pink-500/10 group-hover:shadow-pink-500/10">
+              //         <FaHeart className="text-5xl text-pink-500 transition-transform duration-500 
+              //                            group-hover:scale-110 group-hover:animate-pulse" />
+              //       </div>
+              //       <span className="text-xs font-medium text-gray-300 mt-1">
+              //         24K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Loves</span>
+              //       </span>
+              //     </div>
+              //   </div>
+              // </div>
 
-//               <div className="absolute -left-6 -top-6 z-20">
-//                 <div className={`relative w-24 h-24 bg-gray-800/90 backdrop-blur-md rounded-2xl 
-//                                 border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out delay-100
-//                                 group ${isHovering ? 'translate-y-2 rotate-3 scale-[1.02]' : ''}
-//                                 hover:shadow-blue-500/20 hover:border-blue-500/40`}>
-//                   <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-//                     <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
-//                                    group-hover:bg-blue-500/10 group-hover:shadow-blue-500/10">
-//                       <FaThumbsUp className="text-4xl text-yellow-500 transition-transform duration-500 
-//                                            group-hover:scale-110 group-hover:rotate-12" />
-//                     </div>
-//                     <span className="text-xs font-medium text-gray-300 mt-1">
-//                       18K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Likes</span>
-//                     </span>
-//                   </div>
-//                 </div>
-//               </div>
+              // <div className="absolute -left-6 -top-6 z-20">
+              //   <div className={`relative w-24 h-24 bg-gray-800/90 backdrop-blur-md rounded-2xl 
+              //                   border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out delay-100
+              //                   group ${isHovering ? 'translate-y-2 rotate-3 scale-[1.02]' : ''}
+              //                   hover:shadow-blue-500/20 hover:border-blue-500/40`}>
+              //     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+              //       <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
+              //                      group-hover:bg-blue-500/10 group-hover:shadow-blue-500/10">
+              //         <FaThumbsUp className="text-4xl text-yellow-500 transition-transform duration-500 
+              //                              group-hover:scale-110 group-hover:rotate-12" />
+              //       </div>
+              //       <span className="text-xs font-medium text-gray-300 mt-1">
+              //         18K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Likes</span>
+              //       </span>
+              //     </div>
+              //   </div>
+              // </div>
               
 //               {/* Animated connection lines */}
 //               <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -2650,8 +2650,7 @@ const Header = () => {
             <p className="text-gray-300 mb-10 max-w-2xl text-lg md:text-xl leading-relaxed">
               Welcome to my portfolio! I am Sabirin, a skilled Full Stack Developer specializing
               in the <span className="text-yellow-500 font-semibold"> MERN stack (MongoDB, Express.js, React, Node.js)</span>, 
-              with additional expertise in PHP, MySQL, and Java.
-              Proficient in building responsive, scalable web applications, I am passionate about solving
+              in building responsive, scalable web applications, I am passionate about solving
               complex problems and creating user-friendly websites
             </p>
             
@@ -2717,6 +2716,45 @@ const Header = () => {
                className="relative rounded-full border-4 border-yellow-500 w-full h-full object-cover shadow-2xl z-10
                           transition-all duration-500 ease-out"
               />  
+
+ {/* Floating badges */}
+ <div className="absolute -right-6 -bottom-6 z-20">
+                <div className={`relative w-28 h-28 bg-gray-800/90 backdrop-blur-md rounded-2xl 
+                                border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out
+                                group ${isHovering ? 'translate-y-2 -rotate-3 scale-[1.02]' : ''}
+                                hover:shadow-pink-500/20 hover:border-pink-500/40`}>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                    <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
+                                   group-hover:bg-pink-500/10 group-hover:shadow-pink-500/10">
+                      <FaHeart className="text-5xl text-pink-500 transition-transform duration-500 
+                                         group-hover:scale-110 group-hover:animate-pulse" />
+                    </div>
+                    <span className="text-xs font-medium text-gray-300 mt-1">
+                      24K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Loves</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -left-6 -top-6 z-20">
+                <div className={`relative w-24 h-24 bg-gray-800/90 backdrop-blur-md rounded-2xl 
+                                border border-gray-600/30 shadow-2xl transition-all duration-500 ease-out delay-100
+                                group ${isHovering ? 'translate-y-2 rotate-3 scale-[1.02]' : ''}
+                                hover:shadow-blue-500/20 hover:border-blue-500/40`}>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                    <div className="relative mb-2 p-3 rounded-lg bg-gray-700/30 transition-all duration-300
+                                   group-hover:bg-blue-500/10 group-hover:shadow-blue-500/10">
+                      <FaThumbsUp className="text-4xl text-yellow-500 transition-transform duration-500 
+                                           group-hover:scale-110 group-hover:rotate-12" />
+                    </div>
+                    <span className="text-xs font-medium text-gray-300 mt-1">
+                      18K <span className="opacity-0 group-hover:opacity-100 transition-opacity">Likes</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              
             </div>
           </div>
         </div>
