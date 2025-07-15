@@ -460,9 +460,9 @@ const projects = [
   },
   {
     image: project3,
-    title: "Portfolio Website",
-    description: "Custom portfolio design with animations",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    title: "Restuarant Website ",
+    description: " Restuarant web  design with animations and highly quailty functionality",
+    tags: ["React.js", "Tailwind CSS", "Framer Motion" ,"Redux"],
     link: "https://spa-restuarant.vercel.app/"
   },
   {
