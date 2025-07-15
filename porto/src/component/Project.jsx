@@ -408,8 +408,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import project1 from '../assets/img.jpg';
-import project2 from '../assets/img3.jpg';
-import project3 from '../assets/img6.jpg';
+import project2 from '../assets/bg-peaza.jpg';
+import project3 from '../assets/cores.jpg';
 import project4 from '../assets/img7.jpg';
 
 // Animation variants
@@ -453,9 +453,9 @@ const projects = [
   },
   {
     image: project2,
-    title: "Task Management App",
+    title: "Nast-web ",
     description: "Productivity application with real-time updates",
-    tags: ["React", "Firebase", "Material UI"],
+    tags: ["Javasript", " Html", "Tailwindcss"],
     link: "#"
   },
   {
