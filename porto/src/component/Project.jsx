@@ -444,13 +444,8 @@ const itemVariants = {
 };
 
 const projects = [
-  {
-    image: project1,
-    title: "E-commerce Platform",
-    description: "Full-featured online store with React, Node.js, and MongoDB",
-    tags: ["React", "Node.js", "MongoDB"],
-    link: "#"
-  },
+
+
   {
     image: project2,
     title: "Nast-web ",
@@ -458,6 +453,14 @@ const projects = [
     tags: ["Javasript", " Html", "Tailwindcss"],
     link: "#"
   },
+  {
+    image: project1,
+    title: "E-commerce Platform",
+    description: "Full-featured online store with React, Node.js, and MongoDB",
+    tags: ["React", "Node.js", "MongoDB"],
+    link: "#"
+  },
+ 
   {
     image: project3,
     title: "Restuarant Website ",
