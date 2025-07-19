@@ -67,7 +67,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 const Footer = () => {
   const socialLinks = [
     { icon: <FaGithub />, url: "https://github.com/SabirinMohamudAdan" },
-    { icon: <FaLinkedin />, url: "https://linkedin.com/in/yourprofile" },
+    { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/sabirin-mohamud-840711331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " },
     { icon: <FaTwitter />, url: "https://twitter.com/yourhandle" },
     { icon: <FaEnvelope />, url: "mailto:sabrinmohamud247@gmail.com" }
   ];
