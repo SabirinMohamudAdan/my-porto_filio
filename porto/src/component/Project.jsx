@@ -410,7 +410,7 @@ import { motion } from 'framer-motion';
 import project1 from '../assets/img.jpg';
 import project2 from '../assets/bg-peaza.jpg';
 import project3 from '../assets/cores.jpg';
-import project4 from '../assets/img7.jpg';
+import project4 from '../assets/img9.jpg';
 
 // Animation variants
 const containerVariants = {
@@ -451,7 +451,7 @@ const projects = [
     title: "Nast-web ",
     description: "Productivity application with real-time updates",
     tags: ["Javasript", " Html", "Tailwindcss"],
-    link: "#"
+    link: "https://sabirinmohamudadan.github.io/Nasta_web/"
   },
   {
     image: project1,
@@ -470,10 +470,10 @@ const projects = [
   },
   {
     image: project4,
-    title: "Portfolio Website",
-    description: "Custom portfolio design with animations",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "#"
+    title: "Small app",
+    description: "image post design with animations",
+    tags: ["Reactjs", "Tailwind CSS", "Framer Motion"],
+    link: "https://small-app-six.vercel.app/"
   }
 ];
 
