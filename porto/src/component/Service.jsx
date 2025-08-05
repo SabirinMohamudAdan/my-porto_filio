@@ -53,17 +53,17 @@ const services = [
   {
     icon: <FaCode className="text-3xl text-yellow-500" />,
     title: "Web Development",
-    description: "Custom website development using modern technologies like React, Next.js, and Tailwind CSS."
+    description: "Custom website development using modern technologies like React.js and Tailwind CSS."
   },
-  {
-    icon: <FaMobile className="text-3xl text-yellow-500" />,
-    title: "Mobile Development",
-    description: "Cross-platform mobile app development with React Native for iOS and Android."
-  },
+  // {
+  //   icon: <FaMobile className="text-3xl text-yellow-500" />,
+  //   title: "Mobile Development",
+  //   description: "Cross-platform mobile app development with  for iOS and Android."
+  // },
   {
     icon: <FaServer className="text-3xl text-yellow-500" />,
     title: "Backend Development",
-    description: "Robust backend solutions with Node.js, Express, and MongoDB or PostgreSQL."
+    description: "Robust backend solutions with Node.js, Express, and MongoDB or mysql"
   },
   {
     icon: <FaPaintBrush className="text-3xl text-yellow-500" />,
@@ -75,11 +75,11 @@ const services = [
     title: "Database Design",
     description: "Efficient database architecture and optimization for performance."
   },
-  {
-    icon: <FaSearch className="text-3xl text-yellow-500" />,
-    title: "SEO Optimization",
-    description: "Improve your website's visibility and ranking on search engines."
-  }
+  // {
+  //   icon: <FaSearch className="text-3xl text-yellow-500" />,
+  //   title: "SEO Optimization",
+  //   description: "Improve your website's visibility and ranking on search engines."
+  // }
 ];
 
 const Service = () => {
