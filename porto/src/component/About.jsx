@@ -103,7 +103,7 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold text-white mb-6">Who Am I?</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              I'm a passionate Full Stack Developer with expertise in the MERN stack (MongoDB, Express.js, React, Node.js). 
+              I'm a passionate Full Stack Developer ,the MERN stack (MongoDB, Express.js, React, Node.js). 
               With a strong foundation in computer science and years of hands-on experience, I specialize in building 
               scalable, performant web applications that deliver exceptional user experiences.
             </p>
